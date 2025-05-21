@@ -21,6 +21,7 @@ export async function generateMetadata() {
 export default function Home() {
   return (
     <Column maxWidth="m" gap="xl" horizontal="center">
+      
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -34,6 +35,7 @@ export default function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
+
       <Column fillWidth paddingY="24" gap="m">
         <Column maxWidth="s">
           {home.featured && (
@@ -77,9 +79,15 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
+
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
+
+      <RevealFx translateY="16" delay={0.6}>
+        <Projects range={[1,1]} />
+      </RevealFx>
+
       {routes["/blog"] && (
         <Flex fillWidth gap="24" mobileDirection="column">
           <Flex flex={1} paddingLeft="l" paddingTop="24">
@@ -92,6 +100,7 @@ export default function Home() {
           </Flex>
         </Flex>
       )}
+
       <Projects range={[2]} />
       {newsletter.display && <Mailchimp newsletter={newsletter} />}
     </Column>
